@@ -10,6 +10,8 @@ import Translation from './views/Translation.jsx'
 import Profile from './views/Profile.jsx'
 
 function App() {
+  
+
   return (
     <BrowserRouter>
       <div className="App">
