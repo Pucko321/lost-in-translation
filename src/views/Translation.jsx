@@ -4,7 +4,7 @@
  */
  const Translation = () => {
     return (
-        <main className="translation">
+        <main className="Translation">
             <h1>Translation</h1>
         </main>
     )

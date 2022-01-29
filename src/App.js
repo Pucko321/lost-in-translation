@@ -16,12 +16,16 @@ function App() {
         <header className="App-header">
             <h1>Lost In Translation test-header</h1>
             <nav>
-              <li><NavLink to="/translate">Translate</NavLink></li>
-              <li><NavLink to="/profile">Profile</NavLink></li>
+              <li>
+                <NavLink className="App-link" to="/translate">Translate</NavLink>
+              </li>
+              <li>
+                <NavLink className="App-link" to="/profile">Profile</NavLink>
+              </li>
             </nav>
         </header>
         <Routes>
-          <Route path="/" exact element={< Login />} />
+          <Route path="/" element={< Login />} />
           <Route path="/translate" exact element={< Translation />} />
           <Route path="/profile" exact element={< Profile />} />
         </Routes>

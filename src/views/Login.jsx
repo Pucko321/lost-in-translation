@@ -9,7 +9,7 @@
  */
 const Login = () => {
     return (
-        <main className="login">
+        <main className="Login">
             <h1>Login</h1>
         </main>
     )

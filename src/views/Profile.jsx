@@ -4,7 +4,7 @@
  */
  const Profile = () => {
     return (
-        <main className="login">
+        <main className="Profile">
             <h1>Profile</h1>
         </main>
     )
