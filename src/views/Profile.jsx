@@ -13,7 +13,22 @@ import { useNavigate } from "react-router-dom"
 
     return (
         <main className="Profile">
-            <h1 onClick={() => navigate('/')}>Profile</h1>
+            <section className="User-info">
+                <h1 onClick={() => navigate('/')}>User Info</h1>
+                <div className="Profile-info-container">
+                    <p>Username:</p>
+                    <p>Foo Bar</p>
+                </div>
+            </section>
+            
+            <section className="User-translations">
+                <h1>Translations</h1>
+                <div className="User-translation-container">
+                    <p>Translation:</p>
+                    <p>Foo Bar</p>
+                </div>
+                
+            </section>
         </main>
     )
 }
