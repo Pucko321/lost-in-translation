@@ -10,10 +10,13 @@ import Translation from './views/Translation.jsx'
 import Profile from './views/Profile.jsx'
 
 function App() {
-  
+  const basename =
+  process.env.NODE_ENV === "production"
+  ? 'x/demo'
+  : '/'
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <div className="App">
         <header className="App-header">
             <h1>Lost In Translation test-header</h1>
