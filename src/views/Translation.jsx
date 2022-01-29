@@ -7,10 +7,10 @@
  * Component
  * @ignore
  */
-const Login = () => {
+ const Translation = () => {
     return (
-        <main className="login">
-            <h1>Login</h1>
+        <main className="translation">
+            <h1>Translation</h1>
         </main>
     )
 }
@@ -19,4 +19,4 @@ const Login = () => {
  * Export
  * @ignore
  */
-export default Login
+export default Translation

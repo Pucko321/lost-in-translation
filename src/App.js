@@ -3,19 +3,26 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  Redirect
+  NavLink
 } from 'react-router-dom'
-import Login from './views/Login'
+import Login from './views/Login.jsx'
+import Translation from './views/Translation.jsx'
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
         <header className="App-header">
-            <h1>Home</h1>
+            <h1>Lost In Translation test-header</h1>
+            <nav>
+              <li><NavLink to="/translate">Translate</NavLink></li>
+              <li><NavLink to="/profile">Profile</NavLink></li>
+            </nav>
         </header>
         <Routes>
-          <Route path="/" exact element={<Login />} />
+          <Route path="/" exact element={< Login />} />
+          <Route path="/translate" exact element={< Translation />} />
+          <Route path="/profile" exact element={< Login />} />
         </Routes>
       </div>
     </BrowserRouter>
