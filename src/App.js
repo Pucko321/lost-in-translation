@@ -6,6 +6,7 @@ import {
   NavLink
 } from 'react-router-dom'
 import Login from './views/Login.jsx'
+import NotFound from './views/NotFound.jsx'
 import Translation from './views/Translation.jsx'
 import Profile from './views/Profile.jsx'
 
@@ -31,6 +32,7 @@ function App() {
         </header>
         <Routes>
           <Route path="/" element={< Login />} />
+          <Route path="*" element={< NotFound />} />
           <Route path="/translate" exact element={< Translation />} />
           <Route path="/profile" exact element={< Profile />} />
         </Routes>
