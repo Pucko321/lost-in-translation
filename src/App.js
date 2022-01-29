@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom'
 import Login from './views/Login.jsx'
 import Translation from './views/Translation.jsx'
+import Profile from './views/Profile.jsx'
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
         <Routes>
           <Route path="/" exact element={< Login />} />
           <Route path="/translate" exact element={< Translation />} />
-          <Route path="/profile" exact element={< Login />} />
+          <Route path="/profile" exact element={< Profile />} />
         </Routes>
       </div>
     </BrowserRouter>

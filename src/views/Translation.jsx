@@ -1,9 +1,4 @@
 /**
- * Dependencies
- * @ignore
- */
-
-/**
  * Component
  * @ignore
  */
