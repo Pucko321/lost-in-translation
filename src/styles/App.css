@@ -21,6 +21,7 @@
   color: white;
   display: grid;
   grid-template-columns: 1fr auto auto;
+  border-bottom: 5px solid #E7B355;
 }
 
 nav {
@@ -46,4 +47,12 @@ nav {
 .active {
   color: white;
   background: #E7B355;
+}
+
+.Head-app-container {
+  background: #FFC75F;
+}
+
+.Normal-app-container, .Head-app-container {
+  padding: 20px 10%;
 }
