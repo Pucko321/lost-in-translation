@@ -2,8 +2,9 @@
  * Dependencies
  * @ignore
  */
- import HeadAppContainer from "../hoc/HeadAppContainer"
- import NormalAppContainer from "../hoc/NormalAppContainer"
+ import HeadAppContainer from "../hoc/headAppContainer"
+ import NormalAppContainer from "../hoc/normalAppContainer"
+import withAuth from "../hoc/withAuth"
 
 /**
  * Component
@@ -39,4 +40,4 @@
  * Export
  * @ignore
  */
-export default Translation
+export default withAuth(Translation)

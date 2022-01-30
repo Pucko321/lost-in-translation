@@ -2,14 +2,10 @@
  * Dependencies
  * @ignore
  */
- import HeadAppContainer from "../hoc/HeadAppContainer"
- import NormalAppContainer from "../hoc/NormalAppContainer"
-
-/**
- * Dependencies
- * @ignore
- */
+import HeadAppContainer from "../hoc/headAppContainer"
+import NormalAppContainer from "../hoc/normalAppContainer"
 import { useNavigate } from "react-router-dom"
+import withAuth from "../hoc/withAuth"
 
 /**
  * Component
@@ -47,4 +43,4 @@ import { useNavigate } from "react-router-dom"
  * Export
  * @ignore
  */
-export default Profile
+export default withAuth(Profile)

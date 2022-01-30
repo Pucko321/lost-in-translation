@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form"
 import { loginUser } from "../../api/user"
 import { storageSave } from "../../utils/storage"
 import { useUser } from "../../context/UserContext"
+import { STORAGE_KEY_USER } from "../../const/storageKeys"
 
 const usernameConfig = {
     required: true,
@@ -46,7 +47,7 @@ const LoginForm = () => {
     // Side Effects
     useEffect(() => {
         console.log(`User has changed to: ${ user }`);
-        if (user) {
+        if (user !== null) {
             navigate("/translate")
         }
     }, [ user ]) // Empty Deps - Only run 1ce
@@ -62,7 +63,7 @@ const LoginForm = () => {
         if (error) {
             setApiError(error)
         } else if (userResponse) {
-            storageSave("user", userResponse) // "storing user with id because this is a small assignment"
+            storageSave(STORAGE_KEY_USER, userResponse) // "storing user with id because this is a small assignment"
             setUser(userResponse)
         }
     }
