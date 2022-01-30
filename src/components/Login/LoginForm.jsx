@@ -5,6 +5,7 @@
  //import { useState } from "react"
  import { useNavigate } from "react-router-dom"
  import { useForm } from "react-hook-form"
+ import { loginUser } from "../../api/user"
 
 /**
  * Component
@@ -28,7 +29,7 @@ const LoginForm = () => {
     // hook-form
     const usernameConfig = {
         required: true,
-        minLength: 2,
+        minLength: 1,
     }
 
     const {
@@ -37,9 +38,11 @@ const LoginForm = () => {
         formState: { errors }
     } = useForm()
 
-    const onFormSubmit = (data) => {
-        console.log(data);
-        navigate("/translate")
+    const onFormSubmit = async ({ username }) => {
+        const [error, user] = await loginUser(username)
+        console.log("Error: ", error)
+        console.log("User: ", user)
+        //navigate("/translate")
     }
 
     const errorMessage = (() => {
