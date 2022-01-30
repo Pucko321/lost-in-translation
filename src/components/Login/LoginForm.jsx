@@ -38,13 +38,21 @@ const LoginForm = () => {
         formState: { errors }
     } = useForm()
 
-    // Log in the user and navigate to the main page
+    // States
     const [ loading, setLoading ] = useState(false)
+    const [ apiError, setApiError ] = useState(false)
+
+    // Log in the user and navigate to the main page
     const onFormSubmit = async ({ username }) => {
         setLoading(true)
         const [error, user] = await loginUser(username)
         setLoading(false)
-        //navigate("/translate")
+
+        if (error) {
+            setApiError(error)
+        } else if (user) {
+            //navigate("/translate")
+        }
     }
 
     // Check if the username follows the username-requirements, if not -> show corresponding error-message
@@ -77,6 +85,7 @@ const LoginForm = () => {
                 <button type="submit" disabled={ loading } className="Login">Login</button>
 
                 { loading  && <p>Logging in...</p> }
+                { apiError  && <p>{ apiError }</p> }
             </form>
         </main>
     )
