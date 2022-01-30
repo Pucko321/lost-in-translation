@@ -4,13 +4,13 @@
  */
 const TranslationForm = () => {
     return (
-        <form>
+        <form className="Translation-form">
             <div>
-                <label htmlFor="username">Translation</label>
+                {/* <label htmlFor="username">Translation</label> */}
                 <input id="username" type="text" placeholder="What do you wish to translate?" />
             </div>
 
-            <button type="submit" className="Login">Translate</button>
+            <button type="submit" id="Translate-btn">></button>
         </form>
     )
 }
