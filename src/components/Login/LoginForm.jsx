@@ -19,7 +19,6 @@ const usernameConfig = {
  * @ignore
  */
 const LoginForm = () => {
-    const navigate = useNavigate()
     /*const [ credentials, setCredentials ] = useState({
         username: "",
     })
@@ -41,11 +40,15 @@ const LoginForm = () => {
     // Local States
     const [ loading, setLoading ] = useState(false)
     const [ apiError, setApiError ] = useState(false)
+    const navigate = useNavigate()
 
 
     // Side Effects
     useEffect(() => {
         console.log(`User has changed to: ${ user }`);
+        if (user) {
+            navigate("/translate")
+        }
     }, [ user ]) // Empty Deps - Only run 1ce
 
 
