@@ -10,6 +10,7 @@ const apiUrl = process.env.REACT_APP_API_URL
  * Actions
  * @ignore
  */
+// See if the user exists. If user esists -> return [ null, result ], else -> return [errorMessage, [] ]
 const checkForUser = async (username) => {
     try {
         const response = await fetch(`${apiUrl}?username=${username}`)
@@ -23,6 +24,7 @@ const checkForUser = async (username) => {
     }
 }
 
+// Create user. If created -> return [ null, result ], else -> return [errorMessage, [] ]
 const createUser = async (username) => {
     try {
         const response = await fetch(apiUrl, {
@@ -43,6 +45,7 @@ const createUser = async (username) => {
     }
 }
 
+// Log in user. If logged in -> return [ null, user ], else -> return [errorMessage, null ]
 export const loginUser = async (username) => {
     const [ checkError, user ] = await checkForUser(username)
     

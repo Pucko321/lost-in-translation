@@ -31,15 +31,15 @@ const LoginForm = () => {
     }
  */
 
-
+    // Hook-form
     const {
         register,
         handleSubmit,
         formState: { errors }
     } = useForm()
 
+    // Log in the user and navigate to the main page
     const [ loading, setLoading ] = useState(false)
-
     const onFormSubmit = async ({ username }) => {
         setLoading(true)
         const [error, user] = await loginUser(username)
@@ -47,6 +47,7 @@ const LoginForm = () => {
         //navigate("/translate")
     }
 
+    // Check if the username follows the username-requirements, if not -> show corresponding error-message
     const errorMessage = (() => {
         if (!errors.username) {
             return null
