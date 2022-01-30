@@ -2,8 +2,9 @@
  * Dependencies
  * @ignore
  */
- import { useState } from "react"
+ //import { useState } from "react"
  import { useNavigate } from "react-router-dom"
+ import { useForm } from "react-hook-form"
 
 /**
  * Component
@@ -11,31 +12,61 @@
  */
 const LoginForm = () => {
     const navigate = useNavigate()
-    const [ credentials, setCredentials ] = useState({
+    /*const [ credentials, setCredentials ] = useState({
         username: "",
     })
 
     const onInputChange = event => {
+        const { id, value } = event.target
         setCredentials({
             ...credentials,
-            [event.target.id]: event.target.value
+            [id]: value
         })
     }
+ */
 
-    const onFormSubmit = event => {
-        event.preventDefault() // Stop page from realoading
+    // hook-form
+    const usernameConfig = {
+        required: true,
+        minLength: 2,
+    }
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors }
+    } = useForm()
+
+    const onFormSubmit = (data) => {
+        console.log(data);
         navigate("/translate")
     }
 
+    const errorMessage = (() => {
+        if (!errors.username) {
+            return null
+        } else {
+            switch (errors.username.type) {
+                case "required":
+                    return <span>Username is required</span>
+                case "minLength":
+                    return <span>Username is too short (min. 2 characters)</span>
+                default:
+                    return null
+            }
+        }
+    })()
+
     return (
         <main className="Login">
-            <form onSubmit={ onFormSubmit }>
+            <form onSubmit={ handleSubmit(onFormSubmit) }>
                 <h2>Login</h2>
 
-                <div>
+                <fieldset>
                     <label htmlFor="username">Username</label>
-                    <input id="username" type="text" placeholder="What's your name?" onChange={ onInputChange } />
-                </div>
+                    <input id="username" type="text" { ...register("username", usernameConfig) } placeholder="What's your name?" />
+                    { errorMessage }
+                </fieldset>
 
                 <button type="submit" className="Login">Login</button>
             </form>
