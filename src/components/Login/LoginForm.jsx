@@ -47,7 +47,7 @@ const LoginForm = () => {
     // Side Effects
     useEffect(() => {
         console.log(`User has changed to: ${ user }`);
-        if (user) {
+        if (user !== null) {
             navigate("/translate")
         }
     }, [ user ]) // Empty Deps - Only run 1ce
