@@ -9,6 +9,7 @@ import Login from './views/Login.jsx'
 import NotFound from './views/NotFound.jsx'
 import Translation from './views/Translation.jsx'
 import Profile from './views/Profile.jsx'
+import { STORAGE_KEY_APP_NAME } from './const/storageKeys';
 
 function App() {
   const basename =
@@ -20,7 +21,7 @@ function App() {
     <BrowserRouter basename={basename}>
       <div className="App">
         <header className="App-header">
-            <h1>Lost In Translation test-header</h1>
+            <h1>{ STORAGE_KEY_APP_NAME }</h1>
             <nav>
               <li>
                 <NavLink className="App-link" to="/translate">Translate</NavLink>
