@@ -2,11 +2,12 @@
  * Dependencies
  * @ignore
  */
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { useForm } from "react-hook-form"
 import { loginUser } from "../../api/user"
 import { storageSave } from "../../utils/storage"
+import { useUser } from "../../context/UserContext"
 
 const usernameConfig = {
     required: true,
@@ -32,27 +33,39 @@ const LoginForm = () => {
     }
  */
 
-    // Hook-form
+    // Hooks
     const {register, handleSubmit, formState: { errors }} = useForm()
+    const { user, setUser } = useUser()
 
-    // States
+
+    // Local States
     const [ loading, setLoading ] = useState(false)
     const [ apiError, setApiError ] = useState(false)
 
+
+    // Side Effects
+    useEffect(() => {
+        console.log(`User has changed to: ${ user }`);
+    }, [ user ]) // Empty Deps - Only run 1ce
+
+
+    // Event Handlers
     // Log in the user and navigate to the main page
     const onFormSubmit = async ({ username }) => {
         setLoading(true)
-        const [error, user] = await loginUser(username)
+        const [error, userResponse] = await loginUser(username)
         setLoading(false)
 
         if (error) {
             setApiError(error)
-        } else if (user) {
-            storageSave("user", user) // "storing user with id because this is a small assignment"
-            //navigate("/translate")
+        } else if (userResponse) {
+            storageSave("user", userResponse) // "storing user with id because this is a small assignment"
+            setUser(userResponse)
         }
     }
 
+
+    // Render Function
     // Check if the username follows the username-requirements, if not -> show corresponding error-message
     const errorMessage = (() => {
         if (!errors.username) {
@@ -68,6 +81,7 @@ const LoginForm = () => {
             }
         }
     })()
+
 
     return (
         <main className="Login">
