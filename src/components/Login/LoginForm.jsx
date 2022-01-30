@@ -2,10 +2,15 @@
  * Dependencies
  * @ignore
  */
- //import { useState } from "react"
- import { useNavigate } from "react-router-dom"
- import { useForm } from "react-hook-form"
- import { loginUser } from "../../api/user"
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+import { useForm } from "react-hook-form"
+import { loginUser } from "../../api/user"
+
+const usernameConfig = {
+    required: true,
+    minLength: 1,
+}
 
 /**
  * Component
@@ -26,11 +31,6 @@ const LoginForm = () => {
     }
  */
 
-    // hook-form
-    const usernameConfig = {
-        required: true,
-        minLength: 1,
-    }
 
     const {
         register,
@@ -38,10 +38,12 @@ const LoginForm = () => {
         formState: { errors }
     } = useForm()
 
+    const [ loading, setLoading ] = useState(false)
+
     const onFormSubmit = async ({ username }) => {
+        setLoading(true)
         const [error, user] = await loginUser(username)
-        console.log("Error: ", error)
-        console.log("User: ", user)
+        setLoading(false)
         //navigate("/translate")
     }
 
@@ -71,7 +73,9 @@ const LoginForm = () => {
                     { errorMessage }
                 </fieldset>
 
-                <button type="submit" className="Login">Login</button>
+                <button type="submit" disabled={ loading } className="Login">Login</button>
+
+                { loading  && <p>Logging in...</p> }
             </form>
         </main>
     )
