@@ -2,8 +2,8 @@
  * Dependencies
  * @ignore
  */
- import HeadAppContainer from "../hoc/HeadAppContainer"
- import NormalAppContainer from "../hoc/NormalAppContainer"
+ import HeadAppContainer from "../hoc/headAppContainer"
+ import NormalAppContainer from "../hoc/normalAppContainer"
 
 /**
  * Dependencies
