@@ -32,9 +32,9 @@ function App() {
         </header>
         <Routes>
           <Route path="/" element={< Login />} />
-          <Route path="*" element={< NotFound />} />
           <Route path="/translate" exact element={< Translation />} />
           <Route path="/profile" exact element={< Profile />} />
+          <Route path="*" element={< NotFound />} />
         </Routes>
       </div>
     </BrowserRouter>
