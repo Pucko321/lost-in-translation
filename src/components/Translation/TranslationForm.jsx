@@ -10,7 +10,7 @@ const TranslationForm = () => {
                 <input id="username" type="text" placeholder="What do you wish to translate?" />
             </div>
 
-            <button type="submit" id="Translate-btn">></button>
+            <button type="submit" id="Translate-btn">{">"}</button>
         </form>
     )
 }
