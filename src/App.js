@@ -1,15 +1,10 @@
-import './styles/App.css';
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  NavLink
-} from 'react-router-dom'
+import './styles/App.css'
+import {BrowserRouter, Routes, Route, NavLink} from 'react-router-dom'
 import Login from './views/Login.jsx'
 import NotFound from './views/NotFound.jsx'
 import Translation from './views/Translation.jsx'
 import Profile from './views/Profile.jsx'
-import { STORAGE_KEY_APP_NAME } from './const/storageKeys';
+import { STORAGE_KEY_APP_NAME } from './const/storageKeys'
 
 function App() {
   const basename =

@@ -1,4 +1,10 @@
 /**
+ * Dependencies
+ * @ignore
+ */
+import '../styles/AppContainer.css';
+
+/**
  * hoc
  * @ignore
  */
