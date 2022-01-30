@@ -20,19 +20,6 @@ const usernameConfig = {
  * @ignore
  */
 const LoginForm = () => {
-    /*const [ credentials, setCredentials ] = useState({
-        username: "",
-    })
-
-    const onInputChange = event => {
-        const { id, value } = event.target
-        setCredentials({
-            ...credentials,
-            [id]: value
-        })
-    }
- */
-
     // Hooks
     const {register, handleSubmit, formState: { errors }} = useForm()
     const { user, setUser } = useUser()
@@ -46,7 +33,6 @@ const LoginForm = () => {
 
     // Side Effects
     useEffect(() => {
-        console.log(`User has changed to: ${ user }`);
         if (user !== null) {
             navigate("/translate")
         }
