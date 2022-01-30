@@ -6,6 +6,7 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useForm } from "react-hook-form"
 import { loginUser } from "../../api/user"
+import { storageSave } from "../../utils/storage"
 
 const usernameConfig = {
     required: true,
@@ -32,11 +33,7 @@ const LoginForm = () => {
  */
 
     // Hook-form
-    const {
-        register,
-        handleSubmit,
-        formState: { errors }
-    } = useForm()
+    const {register, handleSubmit, formState: { errors }} = useForm()
 
     // States
     const [ loading, setLoading ] = useState(false)
@@ -51,6 +48,7 @@ const LoginForm = () => {
         if (error) {
             setApiError(error)
         } else if (user) {
+            storageSave("user", user) // "storing user with id because this is a small assignment"
             //navigate("/translate")
         }
     }
