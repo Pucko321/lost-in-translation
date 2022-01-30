@@ -5,6 +5,7 @@
 import HeadAppContainer from "../hoc/HeadAppContainer"
 import NormalAppContainer from "../hoc/NormalAppContainer"
 import LoginForm from "../components/Login/LoginForm.jsx"
+import WelcomeMessage from "../components/Login/WelcomeMessage"
 
 /**
  * Component
@@ -14,10 +15,7 @@ const Login = () => {
     return (
         <>
             <HeadAppContainer>
-                <section className="Welcome-message">
-                    <h1>Lost In Translation</h1>
-                    <img src={"./assets/logo/logo-hello.png"} alt="hello-logo" />
-                </section>
+                <WelcomeMessage />
             </HeadAppContainer>
             <NormalAppContainer>
                 <LoginForm />
