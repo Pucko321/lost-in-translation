@@ -2,8 +2,10 @@
  * Dependencies
  * @ignore
  */
- import HeadAppContainer from "../hoc/headAppContainer"
- import NormalAppContainer from "../hoc/normalAppContainer"
+import TranslatedMessage from "../components/Translation/TranslatedMessage"
+import TranslationForm from "../components/Translation/TranslationForm"
+import HeadAppContainer from "../hoc/headAppContainer"
+import NormalAppContainer from "../hoc/normalAppContainer"
 import withAuth from "../hoc/withAuth"
 
 /**
@@ -14,23 +16,11 @@ import withAuth from "../hoc/withAuth"
     return (
         <main className="Translation">
             <HeadAppContainer>
-                <form>
-                    <div>
-                        <label htmlFor="username">Translation</label>
-                        <input id="username" type="text" placeholder="What do you wish to translate?" />
-                    </div>
-
-                    <button type="submit" className="Login">Translate</button>
-                </form>
+                <TranslationForm />
             </HeadAppContainer>
 
             <NormalAppContainer>
-                <section className="Translated-message">
-                    <h2>Translation</h2>
-                    <div id="Translated-message">
-                        Images...
-                    </div>
-                </section>
+                <TranslatedMessage />
             </NormalAppContainer>
         </main>
     )
