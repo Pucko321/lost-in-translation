@@ -70,18 +70,15 @@
     border-radius: 50px;
 }
 
-#Translated-message img {
+#Translated-message li img {
     height: 100px;
     width: 100px;
 }
 
-#Translated-message p {
-    display: inline;
-
+#Translated-message {
+    list-style-type: none;
 }
 
-.Translated-message-separation {
-    font-size: 50px;
-
+#Translated-message li {
+    float: left;
 }
-
