@@ -23,7 +23,7 @@ npm install
 ## Usage
 
 ```
-npm run dev
+npm start
 ```
 
 ## Maintainers
