@@ -6,6 +6,7 @@ import HeadAppContainer from "../hoc/headAppContainer"
 import NormalAppContainer from "../hoc/normalAppContainer"
 import { useNavigate } from "react-router-dom"
 import withAuth from "../hoc/withAuth"
+import { useUser } from "../context/UserContext"
 
 /**
  * Component
@@ -34,7 +35,9 @@ const Profile = () => {
                     <h1>Translations</h1>
                     <div className="User-translation-container">
                         <p>Translation:</p>
-                        <p>Foo Bar</p>
+                        <div>{user && user.translations.map((translation, index) => (
+                            <h4 key={index}>{JSON.stringify(translation, null, 2)}</h4>
+                        ))}</div>
                     </div>
                 </section>
             </NormalAppContainer>
