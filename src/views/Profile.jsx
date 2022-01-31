@@ -11,8 +11,11 @@ import withAuth from "../hoc/withAuth"
  * Component
  * @ignore
  */
- const Profile = () => {
-     const navigate = useNavigate()
+const Profile = () => {
+    const navigate = useNavigate()
+    const { user } = useUser()
+
+    
 
     return (
         <main className="Profile">
@@ -21,7 +24,7 @@ import withAuth from "../hoc/withAuth"
                     <h1 onClick={() => navigate('/')}>User Info</h1>
                     <div className="Profile-info-container">
                         <p>Username:</p>
-                        <p>Foo Bar</p>
+                        <h1>{user && user.username}</h1>
                     </div>
                 </section>
             </HeadAppContainer>
