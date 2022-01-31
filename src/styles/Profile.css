@@ -1,0 +1,36 @@
+.Profile-translation-delete {
+    background-color: #E7B355;
+    width: 30px;
+    border: 0;
+    flex-grow: 0;
+}
+
+.Profile-translation-delete:hover {
+    background-color: #c7c4bf;
+    flex-grow: 0;
+}
+
+.Profile-translation-text {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.Profile-translation-element {
+    text-align: center;
+    vertical-align: middle;
+    display: flex;
+    width: 50%;
+    border-radius: 5px;
+    height: 30px;
+    margin: 5px 0;
+    background-color: #FFC75F;
+}
+
+.User-translation-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+}
