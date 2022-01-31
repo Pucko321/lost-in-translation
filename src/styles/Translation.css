@@ -42,5 +42,46 @@
 
 
 /* Translation Message */
+#Translated-message-box {
+    min-height: 350px;
+    width: 100%;
+    border-radius: 25px;
+    box-shadow: 0px 0px 20px 2px #cecdcd;
+    margin-top: 80px;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    overflow: hidden;
+}
 
+#Translation-message-header {
+    grid-row: 2;
+    background: #845EC2;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    padding: 0 20px;
+}
+
+#Translation-message-header h2 {
+    border: none;
+    font-size: 17px;
+    margin: 0 10;
+    padding: 3px 15px;
+    background: white;
+    border-radius: 50px;
+}
+
+#Translated-message img {
+    height: 100px;
+    width: 100px;
+}
+
+#Translated-message p {
+    display: inline;
+
+}
+
+.Translation-separation {
+    font-size: 50px;
+
+}
 

@@ -1,7 +1,7 @@
 .Head-app-container {
-    background: #FFC75F;
-  }
+  background: #FFC75F;
+}
   
-  .Normal-app-container, .Head-app-container {
-    padding: 20px 10%;
-  }
+.Normal-app-container, .Head-app-container {
+  padding: 20px 10%;
+}
