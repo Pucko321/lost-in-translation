@@ -2,11 +2,13 @@
  * Dependencies
  * @ignore
  */
+import "../styles/Profile.css"
 import HeadAppContainer from "../hoc/headAppContainer"
 import NormalAppContainer from "../hoc/normalAppContainer"
 import { useNavigate } from "react-router-dom"
 import withAuth from "../hoc/withAuth"
 import { useUser } from "../context/UserContext"
+import TranslationElement from "../components/Profile/TranslationElement"
 
 /**
  * Component
@@ -16,7 +18,7 @@ const Profile = () => {
     const navigate = useNavigate()
     const { user } = useUser()
 
-    
+
 
     return (
         <main className="Profile">
@@ -29,15 +31,15 @@ const Profile = () => {
                     </div>
                 </section>
             </HeadAppContainer>
-            
+
             <NormalAppContainer>
                 <section className="User-translations">
                     <h1>Translations</h1>
+                    <p>Translation:</p>
                     <div className="User-translation-container">
-                        <p>Translation:</p>
-                        <div>{user && user.translations.map((translation, index) => (
-                            <h4 key={index}>{JSON.stringify(translation, null, 2)}</h4>
-                        ))}</div>
+                        {user && user.translations.map((translation, index) => (
+                            <TranslationElement key={index} text={translation} />
+                        ))}
                     </div>
                 </section>
             </NormalAppContainer>
