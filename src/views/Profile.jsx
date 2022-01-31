@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom"
 import withAuth from "../hoc/withAuth"
 import { useUser } from "../context/UserContext"
 import TranslationElement from "../components/Profile/TranslationElement"
+import { removeTranslationFromUser } from "../api/translation"
 
 /**
  * Component
@@ -16,9 +17,12 @@ import TranslationElement from "../components/Profile/TranslationElement"
  */
 const Profile = () => {
     const navigate = useNavigate()
-    const { user } = useUser()
+    const { user, setUser } = useUser()
 
-
+    const handleDeleteTranslation = async (index) => {
+        const newUser = await removeTranslationFromUser(user, index)
+        setUser(newUser)
+    }
 
     return (
         <main className="Profile">
@@ -38,7 +42,10 @@ const Profile = () => {
                     <p>Translation:</p>
                     <div className="User-translation-container">
                         {user && user.translations.map((translation, index) => (
-                            <TranslationElement key={index} text={translation} />
+                            <TranslationElement
+                                key={index}
+                                text={translation}
+                                onDelete={() => handleDeleteTranslation(index)} />
                         ))}
                     </div>
                 </section>
