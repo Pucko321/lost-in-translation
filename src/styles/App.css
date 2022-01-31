@@ -48,11 +48,3 @@ nav {
   color: white;
   background: #E7B355;
 }
-
-.Head-app-container {
-  background: #FFC75F;
-}
-
-.Normal-app-container, .Head-app-container {
-  padding: 20px 10%;
-}

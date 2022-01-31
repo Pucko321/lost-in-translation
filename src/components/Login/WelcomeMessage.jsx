@@ -1,3 +1,5 @@
+import { STORAGE_KEY_APP_NAME } from "../../const/storageKeys"
+
 /**
  * Component
  * @ignore
@@ -5,7 +7,7 @@
 const WelcomeMessage = () => {
     return (
         <section className="Welcome-message">
-            <h1>Lost In Translation</h1>
+            <h1>{ STORAGE_KEY_APP_NAME }</h1>
             <img src={"./assets/logo/logo-hello.png"} alt="hello-logo" />
         </section>
     )
