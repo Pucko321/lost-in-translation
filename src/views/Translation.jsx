@@ -21,7 +21,7 @@ import '../styles/Translation.css';
             </HeadAppContainer>
 
             <NormalAppContainer>
-                <TranslatedMessage />
+                <TranslatedMessage message="Hei abc"/>
             </NormalAppContainer>
         </main>
     )
