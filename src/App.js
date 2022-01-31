@@ -18,6 +18,7 @@ function App() {
     <HashRouter basename={basename}>
       <div className="App">
         <header className="App-header">
+            {user !== null && <img src="./assets/logo/logo.png" alt="logo" />}
             <h1>{ STORAGE_KEY_APP_NAME }</h1>
             {user !== null &&
             <nav>
