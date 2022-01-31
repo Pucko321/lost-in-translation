@@ -1,10 +1,10 @@
 import React from 'react';
 
-const TranslationElement = ({ text }) => {
+const TranslationElement = ({ text, onDelete }) => {
     return (
         <div className="Profile-translation-element">
             <span className="Profile-translation-text">{text}</span>
-            <button className="Profile-translation-delete">X</button>
+            <button className="Profile-translation-delete" onClick={onDelete}>X</button>
         </div>
     )
 };
