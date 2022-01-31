@@ -36,7 +36,7 @@ const LoginForm = () => {
         if (user !== null) {
             navigate("/translate")
         }
-    }, [ user ]) // Empty Deps - Only run 1ce
+    }, [ user ]) // eslint-disable-line react-hooks/exhaustive-deps
 
 
     // Event Handlers
