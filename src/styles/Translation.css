@@ -41,7 +41,7 @@
 }
 
 
-/* Translation Message */
+/* Translated Message */
 #Translated-message-box {
     min-height: 350px;
     width: 100%;
@@ -53,7 +53,7 @@
     overflow: hidden;
 }
 
-#Translation-message-header {
+#Translated-message-header {
     grid-row: 2;
     background: #845EC2;
     display: grid;
@@ -61,7 +61,7 @@
     padding: 0 20px;
 }
 
-#Translation-message-header h2 {
+#Translated-message-header h2 {
     border: none;
     font-size: 17px;
     margin: 0 10;
@@ -80,7 +80,7 @@
 
 }
 
-.Translation-separation {
+.Translated-message-separation {
     font-size: 50px;
 
 }
