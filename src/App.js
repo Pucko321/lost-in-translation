@@ -1,5 +1,5 @@
 import './styles/App.css'
-import {BrowserRouter, Routes, Route, NavLink} from 'react-router-dom'
+import {Routes, Route, NavLink, HashRouter } from 'react-router-dom'
 import Login from './views/Login.jsx'
 import NotFound from './views/NotFound.jsx'
 import Translation from './views/Translation.jsx'
@@ -9,11 +9,11 @@ import { STORAGE_KEY_APP_NAME } from './const/storageKeys'
 function App() {
   const basename =
   process.env.NODE_ENV === "production"
-  ? 'x/demo'
+  ? '/'
   : '/'
 
   return (
-    <BrowserRouter basename={basename}>
+    <HashRouter basename={basename}>
       <div className="App">
         <header className="App-header">
             <h1>{ STORAGE_KEY_APP_NAME }</h1>
@@ -33,7 +33,7 @@ function App() {
           <Route path="*" element={< NotFound />} />
         </Routes>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
