@@ -3,6 +3,10 @@
  * @ignore
  */
  import { useForm } from "react-hook-form"
+ import { addTranslationToUser } from "../../api/translation"
+import { STORAGE_KEY_USER } from "../../const/storageKeys"
+ import { useUser } from "../../context/UserContext"
+import { storageSave } from "../../utils/storage"
 
 const messageToTranslateConfig = {
     required: true,
@@ -15,11 +19,17 @@ const messageToTranslateConfig = {
  */
 const TranslationForm = () => {
     const {register, handleSubmit, formState: { errors }} = useForm()
+    const {user, setUser} = useUser()
     // Hooks
 
     // Event Handlers
     const onTranslateSubmit = ({ messageToTranslate }) => {
         console.log(messageToTranslate);
+        addTranslationToUser(user, messageToTranslate)
+            .then(newUser => {
+                setUser(newUser)
+                storageSave(STORAGE_KEY_USER, newUser)
+            })
     }
 
 
