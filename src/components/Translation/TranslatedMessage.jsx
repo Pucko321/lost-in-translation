@@ -20,6 +20,9 @@ function characterToTranslatedObject(character, index) {
     };
 }
 
+/*
+    Returns a list-item containing an image of a handsign representing the character within the object passed in
+*/
 function translatedObjectToHTML(object) {
     return (
         <li key={object.key}>
