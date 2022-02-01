@@ -33,7 +33,7 @@ import { storageDelete } from '../utils/storage'
                 <NavLink className="App-link" to="/profile">Profile</NavLink>
               </li>
             </nav>}
-            { /* Show logout button when user is logged out */ }
+            { /* Show logout button when user is logged in */ }
             {user !== null && <button className="Logout-btn" onClick={ handleLogoutClick }>Logout</button>}
         </header>
     )
