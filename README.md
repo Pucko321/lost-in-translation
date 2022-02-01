@@ -4,12 +4,16 @@
 
 Translation application built using React
 
+The styling of the website is inspired by the wireframe example in the assignment text. Lecture materials have been used as reference under development.
+
 ## Table of Contents
 
 - [Assignment 3: Lost in translation](#assignment-3-lost-in-translation)
   - [Table of Contents](#table-of-contents)
   - [Install](#install)
   - [Usage](#usage)
+    - [Run on localhost:3000](#run-on-localhost3000)
+    - [Github Pages](#github-pages)
   - [Maintainers](#maintainers)
   - [Contributing](#contributing)
   - [License](#license)
@@ -21,10 +25,12 @@ npm install
 ```
 
 ## Usage
-
+### Run on localhost:3000
 ```
 npm start
 ```
+### Github Pages
+https://pucko321.github.io/lost-in-translation/#
 
 ## Maintainers
 
