@@ -8,7 +8,7 @@ import NormalAppContainer from "../hoc/normalAppContainer"
 import { useNavigate } from "react-router-dom"
 import withAuth from "../hoc/withAuth"
 import { useUser } from "../context/UserContext"
-import TranslationElement from "../components/Profile/TranslationElement"
+import TranslationItem from "../components/Profile/TranslationElement"
 import { removeTranslationFromUser } from "../api/translation"
 
 /**
@@ -41,7 +41,7 @@ const Profile = () => {
                     <h1 className="User-translations-header">Translations</h1>
                     <div className="User-translations-container">
                         {user && user.translations.filter((translation) => !translation.deleted).slice(0, 10).map((translation, index) => (
-                            <TranslationElement
+                            <TranslationItem
                                 key={index}
                                 text={translation.text}
                                 onDelete={() => handleDeleteTranslation(index)}
