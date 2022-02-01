@@ -38,6 +38,7 @@
     position: relative;
     top: -130px;
     background: white;
+    margin-bottom: -130px;
 }
 
 .Login-box .Login-form {
