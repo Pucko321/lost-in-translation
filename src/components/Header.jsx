@@ -1,14 +1,24 @@
 import '../styles/Header.css'
-import { STORAGE_KEY_APP_NAME } from '../const/storageKeys'
+import { STORAGE_KEY_APP_NAME, STORAGE_KEY_USER } from '../const/storageKeys'
 import { NavLink } from 'react-router-dom'
 import { useUser } from "../context/UserContext"
+import { storageDelete } from '../utils/storage'
+
 
 /**
  * Component
  * @ignore
  */
  const Header = () => {
-    const { user } = useUser()
+    const { user, setUser } = useUser()
+
+    // Log out the user
+    const handleLogoutClick = () => {
+        if (window.confirm("Are you sure?")) {
+            storageDelete(STORAGE_KEY_USER)
+            setUser(null)
+        }
+    }
 
     return (
         <header className="App-header">
@@ -23,7 +33,7 @@ import { useUser } from "../context/UserContext"
                 <NavLink className="App-link" to="/profile">Profile</NavLink>
               </li>
             </nav>}
-            {user !== null && <button className="Logout-btn">Logout</button>}
+            {user !== null && <button className="Logout-btn" onClick={ handleLogoutClick }>Logout</button>}
         </header>
     )
 }
