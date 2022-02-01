@@ -28,7 +28,7 @@ const Profile = () => {
         <main className="Profile">
             <HeadAppContainer>
                 <section className="User-info">
-                    <h1 onClick={() => navigate('/')}>User Info</h1>
+                    <h1 className="User-info-header" onClick={() => navigate('/')}>User Info</h1>
                     <div className="Profile-info-container">
                         <h1 className="Profile-info-label">Username:</h1>
                         <h1 className="Profile-info-value">{user && user.username}</h1>
