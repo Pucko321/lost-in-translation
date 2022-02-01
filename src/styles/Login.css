@@ -1,0 +1,26 @@
+.Welcome-message {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-column-gap: 60px;
+}
+
+.Welcome-message img {
+    grid-row: 1/3;
+    height: 200px;
+}
+
+.Welcome-message h1, .Welcome-message p {
+    color: white;
+    justify-self: start;
+    margin: 0;
+}
+
+.Welcome-message h1 {
+    font-size: 60px;
+    align-self: end;
+}
+
+.Welcome-message p {
+    font-size: 35px;
+    align-self: start;
+}
