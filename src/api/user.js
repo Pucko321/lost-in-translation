@@ -11,7 +11,7 @@ const apiUrl = process.env.REACT_APP_API_URL
  * @ignore
  */
 // See if the user exists. If user esists -> return [ null, result ], else -> return [errorMessage, [] ]
-const checkForUser = async (username) => {
+export const checkForUser = async (username) => {
     try {
         const response = await fetch(`${apiUrl}?username=${username}`)
         if (!response.ok) {
