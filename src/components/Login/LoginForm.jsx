@@ -12,7 +12,7 @@ import { STORAGE_KEY_USER } from "../../const/storageKeys"
 
 const usernameConfig = {
     required: true,
-    minLength: 1,
+    minLength: 2,
 }
 
 /**
