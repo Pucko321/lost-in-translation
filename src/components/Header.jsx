@@ -23,6 +23,7 @@ import { useUser } from "../context/UserContext"
                 <NavLink className="App-link" to="/profile">Profile</NavLink>
               </li>
             </nav>}
+            {user !== null && <button className="Logout-btn">Logout</button>}
         </header>
     )
 }
