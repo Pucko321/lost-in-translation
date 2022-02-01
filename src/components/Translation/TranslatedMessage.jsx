@@ -7,8 +7,6 @@ function testCharacterValid(character) {
     return regexCharIsInAlphabet.test(character);
 }
 
-// "a", " "
-
 /*
     Returns an object with the attributes required to render each character as a list item.
 */
