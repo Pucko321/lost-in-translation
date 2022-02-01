@@ -18,7 +18,7 @@ const messageToTranslateConfig = {
  * @ignore
  */
 const TranslationForm = ({ onUpdate }) => {
-    const {register, handleSubmit, formState: { errors }} = useForm()
+    const {register, handleSubmit} = useForm()
     const {user, setUser} = useUser()
     // Hooks
 
