@@ -75,16 +75,13 @@ const LoginForm = () => {
 
     return (
         <main className="Login">
-            <form onSubmit={ handleSubmit(onFormSubmit) }>
-                <h2>Login</h2>
-
+            <form className="Text-form" onSubmit={ handleSubmit(onFormSubmit) }>
                 <fieldset>
-                    <label htmlFor="username">Username</label>
-                    <input id="username" type="text" { ...register("username", usernameConfig) } placeholder="What's your name?" />
+                    <input className="Text-input" type="text" { ...register("username", usernameConfig) } placeholder="What's your name?" />
                     { errorMessage }
                 </fieldset>
 
-                <button type="submit" disabled={ loading } className="Login">Login</button>
+                <button className="Submit-btn Login" type="submit" disabled={ loading }>{">"}</button>
 
                 { loading  && <p>Logging in...</p> }
                 { apiError  && <p>{ apiError }</p> }
