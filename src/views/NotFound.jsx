@@ -3,6 +3,8 @@
   * @ignore
   */
  import { NavLink } from 'react-router-dom';
+ import HeadAppContainer from "../hoc/headAppContainer"
+ import NormalAppContainer from "../hoc/normalAppContainer"
 
  /**
   * Component
@@ -11,9 +13,15 @@
   const NotFound = () => {
      return (
          <main className="NotFound">
-             <h1>404</h1>
-             <p>Page not found</p>
-             <NavLink className="App-link" to="/">Press here to go home</NavLink>
+             <HeadAppContainer>
+                <h1>404</h1>
+                <p>Page not found</p>
+             </HeadAppContainer>
+             <NormalAppContainer>
+                 <>
+                    <NavLink className="App-link" to="/">Press here to go home</NavLink>
+                </>
+             </NormalAppContainer>
          </main>
      )
  }
