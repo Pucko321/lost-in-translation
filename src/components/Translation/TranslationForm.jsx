@@ -23,7 +23,6 @@ const TranslationForm = ({ onUpdate }) => {
 
     // Event Handlers
     const onTranslateSubmit = ({ messageToTranslate }) => {
-        console.log(messageToTranslate);
         onUpdate(messageToTranslate)
         addTranslationToUser(user, messageToTranslate)
             .then(newUser => {

@@ -15,7 +15,6 @@ const apiUrl = process.env.REACT_APP_API_URL
  * @returns {Translation} Translation
  */
 function checkIsObjectNotString(translation) {
-    console.log("typeof translation: ", typeof translation);
     if(typeof translation === "string") {
         return {
             text: translation,
@@ -54,11 +53,10 @@ export const addTranslationToUser = async (user, translation) => {
         }
         return response.json()
     }).then(updatedUser => {
-        console.log("Updated user with new translation")
         storageSave(STORAGE_KEY_USER, updatedUser)
         return updatedUser
     }).catch(error => {
-        console.log("Error updating user with translation")
+        console.error("Error updating user with translation")
     })
 
 }
@@ -97,7 +95,6 @@ export const removeTranslationFromUser = async (user, index) => {
         }
         return response.json()
     }).then(updatedUser => {
-        console.log("Updated user with removed translation")
         storageSave(STORAGE_KEY_USER, updatedUser)
         return updatedUser
     }).catch(error => {
