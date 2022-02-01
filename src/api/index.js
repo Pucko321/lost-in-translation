@@ -9,5 +9,6 @@ export const createHeaders = () => {
     return {
         'Content-Type': 'application/json',
         "x-api-key": apiKey,
+        "x-content-type-options": "nosniff"
     }
 }
