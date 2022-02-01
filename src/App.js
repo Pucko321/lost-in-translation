@@ -33,6 +33,7 @@ function App() {
         <Routes>
           <Route path="/" element={< Login />} />
           <Route path="/translate" exact element={< Translation />} />
+          <Route path="/translate/:pathMessage" exact element={< Translation />} />
           <Route path="/profile" exact element={< Profile />} />
           <Route path="*" element={< NotFound />} />
         </Routes>
