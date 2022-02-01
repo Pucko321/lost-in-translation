@@ -55,7 +55,7 @@ const createUser = async (username) => {
  * @returns {User} A User object
  */
 export const loginUser = async (username) => {
-    const [ checkError, user ] = checkForUser(username)
+    const [ checkError, user ] = await checkForUser(username)
     
     if (checkError !== null) {
         return [checkError, null ]
