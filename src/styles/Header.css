@@ -1,0 +1,29 @@
+.App-header {
+    background-color: #FFC75F;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    grid-gap: 10px;
+    border-bottom: 5px solid #E7B355;
+    padding: 10px 0 10px 120px;
+  }
+  
+  .App-header img {
+    height: 80px;
+    width: 80px;
+  }
+  
+  .App-header h1 {
+    font-size: 30px;
+    justify-self: start;
+    margin-left: 30px;
+  }
+  
+  nav {
+    list-style: none;
+    display: grid;
+    grid-template-columns: auto auto;
+  }

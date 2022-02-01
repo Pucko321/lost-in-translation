@@ -1,3 +1,4 @@
+import '../styles/Header.css'
 import { STORAGE_KEY_APP_NAME } from '../const/storageKeys'
 import { NavLink } from 'react-router-dom'
 import { useUser } from "../context/UserContext"
