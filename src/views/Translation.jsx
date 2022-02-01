@@ -9,7 +9,9 @@ import TranslationForm from "../components/Translation/TranslationForm"
 import HeadAppContainer from "../hoc/headAppContainer"
 import NormalAppContainer from "../hoc/normalAppContainer"
 import withAuth from "../hoc/withAuth"
-import '../styles/Translation.css';
+import '../styles/Translation.css'
+import '../styles/Forms.css'
+
 
 /**
  * Component

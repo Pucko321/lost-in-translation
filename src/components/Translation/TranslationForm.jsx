@@ -35,13 +35,13 @@ const TranslationForm = ({ onUpdate }) => {
 
 
     return (
-        <form className="Translation-form" onSubmit={ handleSubmit(onTranslateSubmit) }>
-            <div>
-                <input type="text" { ...register("messageToTranslate", messageToTranslateConfig) } placeholder="What do you wish to translate?" />
-            </div>
+        <form className="Text-form" onSubmit={ handleSubmit(onTranslateSubmit) }>
+            <fieldset>
+                <input className="Text-input" type="text" { ...register("messageToTranslate", messageToTranslateConfig) } placeholder="What do you wish to translate?" />
+            </fieldset>
             
 
-            <button type="submit" id="Translate-btn">{">"}</button>
+            <button className="Submit-btn" type="submit">{">"}</button>
         </form>
     )
 }
