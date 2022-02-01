@@ -28,19 +28,18 @@ const Profile = () => {
         <main className="Profile">
             <HeadAppContainer>
                 <section className="User-info">
-                    <h1 onClick={() => navigate('/')}>User Info</h1>
+                    <h1 className="User-info-header" onClick={() => navigate('/')}>User Info</h1>
                     <div className="Profile-info-container">
-                        <p>Username:</p>
-                        <h1>{user && user.username}</h1>
+                        <h2 className="Profile-info-label">Username:</h2>
+                        <h1 className="Profile-info-value">{user && user.username}</h1>
                     </div>
                 </section>
             </HeadAppContainer>
 
             <NormalAppContainer>
                 <section className="User-translations">
-                    <h1>Translations</h1>
-                    <p>Translation:</p>
-                    <div className="User-translation-container">
+                    <h1 className="User-translations-header">Translations</h1>
+                    <div className="User-translations-container">
                         {user && user.translations.filter((translation) => !translation.deleted).slice(0, 10).map((translation, index) => (
                             <TranslationElement
                                 key={index}
