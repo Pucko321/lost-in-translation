@@ -60,19 +60,28 @@ export const addTranslationToUser = async (user, translation) => {
 
 }
 
-// Remove translation from user by index.
+/* 
+    Remove translation from user by index. 
+    The index parameter is the index of translations that are not already deleted,
+    since a translation cant be deleted more than once.
+*/
 export const removeTranslationFromUser = async (user, index) => {
     if (!user)
         return
+
+    // Keeps track of number of deleted translations before the one that should be deleted
+    let indexOffset = 0;
 
     return await fetch(`${apiUrl}/${user.id}`, {
         method: 'PATCH',
         headers: createHeaders(),
         body: JSON.stringify({
             translations: user.translations.map((translationElement, _index) => {
-                if(_index === index) {
+                if (translationElement.deleted === true) {
+                    indexOffset++;
+                } else if(_index === index + indexOffset) {
                     translationElement.deleted = true;
-                }
+                } 
                 return translationElement;
             })
         })
