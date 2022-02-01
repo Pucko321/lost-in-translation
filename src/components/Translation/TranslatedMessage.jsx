@@ -30,9 +30,6 @@ function translatedObjectToHTML(object) {
     );
 }
 
-function removeWhitespaceObjects(object) {
-    return object.originalCharacter !== " ";
-}
 
 /**
  * Component
