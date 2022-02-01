@@ -12,7 +12,7 @@ const AppContext = ({ children }) => {
     
     return (
         <UserProvider>
-            { children}
+            { children }
         </UserProvider>
     )
 }

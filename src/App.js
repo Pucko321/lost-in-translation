@@ -7,13 +7,8 @@ import Profile from './views/Profile.jsx'
 import Header from "./components/Header"
 
 function App() {
-  const basename =
-  process.env.NODE_ENV === "production"
-  ? '/'
-  : '/'
-
   return (
-    <HashRouter basename={basename}>
+    <HashRouter>
       <div className="App">
         <Header />
         <Routes>

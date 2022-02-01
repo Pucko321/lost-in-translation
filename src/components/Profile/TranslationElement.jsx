@@ -3,8 +3,8 @@ import React from 'react';
 const TranslationItem = ({ text, onDelete, onClick }) => {
     return (
         <div className="Profile-translation-element">
-            <h4 className="Profile-translation-text" onClick={onClick}>{text}</h4>
-            <button className="Profile-translation-delete" onClick={onDelete}>X</button>
+            <h4 className="Profile-translation-text" onClick={ onClick }>{ text }</h4>
+            <button className="Profile-translation-delete" onClick={ onDelete }>X</button>
         </div>
     )
 };
