@@ -47,7 +47,7 @@ const createUser = async (username) => {
 
 // Log in user. If logged in -> return [ null, user ], else -> return [errorMessage, null ]
 export const loginUser = async (username) => {
-    const [ checkError, user ] = await checkForUser(username)
+    const [ checkError, user ] = checkForUser(username)
     
     if (checkError !== null) {
         return [checkError, null ]
