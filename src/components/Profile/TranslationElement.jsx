@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TranslationElement = ({ text, onDelete, onClick }) => {
+const TranslationItem = ({ text, onDelete, onClick }) => {
     return (
         <div className="Profile-translation-element">
             <h4 className="Profile-translation-text" onClick={onClick}>{text}</h4>
@@ -9,4 +9,4 @@ const TranslationElement = ({ text, onDelete, onClick }) => {
     )
 };
 
-export default TranslationElement;
+export default TranslationItem;
