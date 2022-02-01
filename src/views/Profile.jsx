@@ -41,12 +41,12 @@ const Profile = () => {
                     <h1>Translations</h1>
                     <p>Translation:</p>
                     <div className="User-translation-container">
-                        {user && user.translations.map((translation, index) => (
+                        {user && user.translations.filter((translation) => !translation.deleted).slice(0, 10).map((translation, index) => (
                             <TranslationElement
                                 key={index}
-                                text={translation}
+                                text={translation.text}
                                 onDelete={() => handleDeleteTranslation(index)}
-                                onClick={() => navigate(`/translate/${translation}`)} />
+                                onClick={() => navigate(`/translate/${translation.text}`)} />
                         ))}
                     </div>
                 </section>
