@@ -32,7 +32,7 @@ const UserProvider = ({ children }) => {
         if (!user)
             return
 
-        // Clear localStorage and user if it does not exist in the API
+        // Clear localStorage and user if the user does not exist in the API
         checkForUser(storageRead(STORAGE_KEY_USER)?.username).then(([error, user]) => {
             if (error || user.length === 0) {
                 localStorage.clear()
