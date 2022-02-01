@@ -1,6 +1,5 @@
 /* Text Form */
 .Text-form {
-    width: 100%;
     height: 80px;
     display: grid;
     grid-template-columns: 1fr auto;

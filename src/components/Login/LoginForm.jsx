@@ -74,8 +74,8 @@ const LoginForm = () => {
 
 
     return (
-        <main className="Login">
-            <form className="Text-form" onSubmit={ handleSubmit(onFormSubmit) }>
+        <main className="Login-box">
+            <form className="Text-form Login-form" onSubmit={ handleSubmit(onFormSubmit) }>
                 <fieldset>
                     <input className="Text-input" type="text" { ...register("username", usernameConfig) } placeholder="What's your name?" />
                     { errorMessage }
@@ -86,6 +86,7 @@ const LoginForm = () => {
                 { loading  && <p>Logging in...</p> }
                 { apiError  && <p>{ apiError }</p> }
             </form>
+            <div className="Login-box-footer"></div>
         </main>
     )
 }
