@@ -3,6 +3,7 @@
  * @ignore
  */
 import { useState } from "react"
+import { useParams } from "react-router"
 import TranslatedMessage from "../components/Translation/TranslatedMessage"
 import TranslationForm from "../components/Translation/TranslationForm"
 import HeadAppContainer from "../hoc/headAppContainer"
@@ -16,7 +17,9 @@ import '../styles/Translation.css';
  */
  const Translation = () => {
 
-    const [message, setMessage] = useState("");
+    const { pathMessage } = useParams();
+
+    const [message, setMessage] = useState(pathMessage || "");
 
     return (
         <main className="Translation">
