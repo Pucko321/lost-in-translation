@@ -15,9 +15,11 @@ const apiUrl = process.env.REACT_APP_API_URL
 // Add translation to user.
 export const addTranslationToUser = async (user, translation) => {
 
+    // Return if user is null
     if (!user)
         return
 
+    // Return current user if duplicate translation
     if (user.translations.some(_translation => _translation === translation))
         return user
 
