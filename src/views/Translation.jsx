@@ -2,6 +2,7 @@
  * Dependencies
  * @ignore
  */
+import { useState } from "react"
 import TranslatedMessage from "../components/Translation/TranslatedMessage"
 import TranslationForm from "../components/Translation/TranslationForm"
 import HeadAppContainer from "../hoc/headAppContainer"
@@ -14,14 +15,17 @@ import '../styles/Translation.css';
  * @ignore
  */
  const Translation = () => {
+
+    const [message, setMessage] = useState("");
+
     return (
         <main className="Translation">
             <HeadAppContainer>
-                <TranslationForm />
+                <TranslationForm onUpdate={setMessage}/>
             </HeadAppContainer>
 
             <NormalAppContainer>
-                <TranslatedMessage message="Hei abc dette er"/>
+                <TranslatedMessage message={message}/>
             </NormalAppContainer>
         </main>
     )

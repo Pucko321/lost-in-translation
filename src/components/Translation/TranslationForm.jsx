@@ -17,7 +17,7 @@ const messageToTranslateConfig = {
 * Component
  * @ignore
  */
-const TranslationForm = () => {
+const TranslationForm = ({ onUpdate }) => {
     const {register, handleSubmit, formState: { errors }} = useForm()
     const {user, setUser} = useUser()
     // Hooks
@@ -25,6 +25,7 @@ const TranslationForm = () => {
     // Event Handlers
     const onTranslateSubmit = ({ messageToTranslate }) => {
         console.log(messageToTranslate);
+        onUpdate(messageToTranslate)
         addTranslationToUser(user, messageToTranslate)
             .then(newUser => {
                 setUser(newUser)
