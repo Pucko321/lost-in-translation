@@ -8,6 +8,22 @@ import { createHeaders } from "./index.js"
 
 const apiUrl = process.env.REACT_APP_API_URL
 
+/*
+    Ensures that a translation is NOT stored in the API as just a string.
+    If input translation is a string, it is returned as object instead with extra field "deleted:false".
+*/
+function checkIsObjectNotString(translation) {
+    console.log("typeof translation: ", typeof translation);
+    if(typeof translation === "string") {
+        return {
+            text: translation,
+            deleted: false 
+        }
+    } else {
+        return translation;
+    }
+}
+
 /**
  * Actions
  * @ignore
@@ -27,7 +43,7 @@ export const addTranslationToUser = async (user, translation) => {
         method: 'PATCH',
         headers: createHeaders(),
         body: JSON.stringify({
-            translations: [translation, ...user.translations].slice(0, 10)
+            translations: [checkIsObjectNotString(translation)].concat(user.translations)
         })
     }).then(response => {
         if (!response.ok) {
@@ -53,7 +69,12 @@ export const removeTranslationFromUser = async (user, index) => {
         method: 'PATCH',
         headers: createHeaders(),
         body: JSON.stringify({
-            translations: user.translations.filter( (value, _index) => _index !== index )
+            translations: user.translations.map((translationElement, _index) => {
+                if(_index === index) {
+                    translationElement.deleted = true;
+                }
+                return translationElement;
+            })
         })
     }).then(response => {
         if (!response.ok) {
