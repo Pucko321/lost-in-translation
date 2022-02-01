@@ -30,7 +30,7 @@ const Profile = () => {
                 <section className="User-info">
                     <h1 className="User-info-header" onClick={() => navigate('/')}>User Info</h1>
                     <div className="Profile-info-container">
-                        <h1 className="Profile-info-label">Username:</h1>
+                        <h2 className="Profile-info-label">Username:</h2>
                         <h1 className="Profile-info-value">{user && user.username}</h1>
                     </div>
                 </section>
