@@ -18,6 +18,9 @@ export const addTranslationToUser = async (user, translation) => {
     if (!user)
         return
 
+    if (user.translations.some(_translation => _translation === translation))
+        return user
+
     return await fetch(`${apiUrl}/${user.id}`, {
         method: 'PATCH',
         headers: createHeaders(),
