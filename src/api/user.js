@@ -7,10 +7,10 @@ import { createHeaders } from "./index.js"
 const apiUrl = process.env.REACT_APP_API_URL
 
 /**
- * Actions
- * @ignore
+ * See if the user exists. If user esists -> return [ null, result ], else -> return [errorMessage, [] ]
+ * @param {string} username The username of user you want to check if exists
+ * @returns {[Error, User]} An array containing a user object or an error
  */
-// See if the user exists. If user esists -> return [ null, result ], else -> return [errorMessage, [] ]
 export const checkForUser = async (username) => {
     try {
         const response = await fetch(`${apiUrl}?username=${username}`)
@@ -24,7 +24,11 @@ export const checkForUser = async (username) => {
     }
 }
 
-// Create user. If created -> return [ null, result ], else -> return [errorMessage, [] ]
+/**
+ * Create user. If created -> return [ null, result ], else -> return [errorMessage, [] ]
+ * @param {string} username The username of the account you are creating
+ * @returns {[Error?, User?]} A newly created User object or an Error object
+ */
 const createUser = async (username) => {
     try {
         const response = await fetch(apiUrl, {
@@ -45,7 +49,11 @@ const createUser = async (username) => {
     }
 }
 
-// Log in user. If logged in -> return [ null, user ], else -> return [errorMessage, null ]
+/**
+ * Log in user. If logged in -> return [ null, user ], else -> return [errorMessage, null ]
+ * @param {string} username The username of the user you want to login as
+ * @returns {User} A User object
+ */
 export const loginUser = async (username) => {
     const [ checkError, user ] = checkForUser(username)
     
