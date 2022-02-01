@@ -8,7 +8,7 @@ import Header from "./components/Header"
 
 function App() {
   return (
-    <HashRouter basename={basename}>
+    <HashRouter>
       <div className="App">
         <Header />
         <Routes>
