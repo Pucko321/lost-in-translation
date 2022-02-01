@@ -39,7 +39,6 @@ const Profile = () => {
             <NormalAppContainer>
                 <section className="User-translations">
                     <h1>Translations</h1>
-                    <p>Translation:</p>
                     <div className="User-translation-container">
                         {user && user.translations.filter((translation) => !translation.deleted).slice(0, 10).map((translation, index) => (
                             <TranslationElement
