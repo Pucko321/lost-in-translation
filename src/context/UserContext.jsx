@@ -2,7 +2,8 @@
  * Dependencies
  * @ignore
  */
-import { createContext, useContext, useState } from "react"
+import { createContext, useContext, useEffect, useState } from "react"
+import { checkForUser } from "../api/user"
 import { STORAGE_KEY_USER } from "../const/storageKeys"
 import { storageRead } from "../utils/storage"
 
@@ -24,6 +25,15 @@ const UserProvider = ({ children }) => {
     const [ user, setUser ] = useState( storageRead( STORAGE_KEY_USER ) )
 
     const state = { user, setUser }
+
+    useEffect(() => {
+        checkForUser(storageRead(STORAGE_KEY_USER)?.username).then(([error, user]) => {
+            if (error || user.length === 0) {
+                localStorage.clear()
+                setUser(null)
+            }
+        })
+    }, [user])
 
     return(
         <UserContext.Provider value={ state }>
