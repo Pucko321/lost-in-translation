@@ -27,7 +27,6 @@ const UserProvider = ({ children }) => {
     const state = { user, setUser }
 
     useEffect(() => {
-
         // Dont check current user if null
         if (!user)
             return

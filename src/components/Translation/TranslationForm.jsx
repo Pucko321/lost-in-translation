@@ -2,10 +2,10 @@
  * Dependencies
  * @ignore
  */
- import { useForm } from "react-hook-form"
- import { addTranslationToUser } from "../../api/translation"
+import { useForm } from "react-hook-form"
+import { addTranslationToUser } from "../../api/translation"
 import { STORAGE_KEY_USER } from "../../const/storageKeys"
- import { useUser } from "../../context/UserContext"
+import { useUser } from "../../context/UserContext"
 import { storageSave } from "../../utils/storage"
 
 const messageToTranslateConfig = {
@@ -20,7 +20,6 @@ const messageToTranslateConfig = {
 const TranslationForm = ({ onUpdate }) => {
     const {register, handleSubmit} = useForm()
     const {user, setUser} = useUser()
-    // Hooks
 
     // Event Handlers
     const onTranslateSubmit = ({ messageToTranslate }) => {

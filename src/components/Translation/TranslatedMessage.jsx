@@ -1,7 +1,7 @@
 const regexCharIsInAlphabet = new RegExp(/[a-z ]/);
 
 /*
-    Returns whether character is lowercase from a-z.
+    Returns whether character is lowercase from a-z, or space.
 */
 function testCharacterValid(character) {
     return regexCharIsInAlphabet.test(character);
@@ -38,8 +38,8 @@ function translatedObjectToHTML(object) {
  */
  const TranslatedMessage = props => {
     /*
-        Maps the un-translated message to an array of objects
-        where each object has the attributes required for rendering the sign image.
+        Maps the un-translated message to an array of HTML elements representing sign language as images.
+        Spaces are changed to '-' to distinguish between words.
     */
     const translatedListItems = Array.from(props.message.toLowerCase())
         .filter(testCharacterValid)
