@@ -45,7 +45,8 @@ const Profile = () => {
                             <TranslationElement
                                 key={index}
                                 text={translation}
-                                onDelete={() => handleDeleteTranslation(index)} />
+                                onDelete={() => handleDeleteTranslation(index)}
+                                onClick={() => navigate(`/translate/${translation}`)} />
                         ))}
                     </div>
                 </section>
