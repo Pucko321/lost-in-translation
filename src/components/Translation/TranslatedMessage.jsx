@@ -7,8 +7,6 @@ function testCharacterValid(character) {
     return regexCharIsInAlphabet.test(character);
 }
 
-// "a", " "
-
 /*
     Returns an object with the attributes required to render each character as a list item.
 */
@@ -20,6 +18,9 @@ function characterToTranslatedObject(character, index) {
     };
 }
 
+/*
+    Returns a list-item containing an image of a handsign representing the character within the object passed in
+*/
 function translatedObjectToHTML(object) {
     return (
         <li key={object.key}>
